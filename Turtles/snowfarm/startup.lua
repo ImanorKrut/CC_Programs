@@ -56,7 +56,7 @@ local BAD_GRID_SLOTS = {3, 7, 9, 10, 11}
 local STORAGE_SLOTS  = {4, 8, 12, 13, 14, 15, 16}
 
 -- How long to wait before retrying when there was nothing to mine.
-local IDLE_WAIT = 0.5
+local IDLE_WAIT = 0
 
 -- Moves an item from fromSlot into any suitable slot from targets
 -- (moves a whole stack at once, never one item at a time).
@@ -121,7 +121,7 @@ local function dropSnowBlocks()
         local item = turtle.getItemDetail(slot)
         if item and item.name == SNOW_BLOCK then
             turtle.select(slot)
-            turtle.dropDown()
+            turtle.dropUp()
         end
     end
 end
